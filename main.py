@@ -16,6 +16,10 @@ top_countries = ['Other','India','USA','Canada','Australia','UK','Germany','Mexi
 
 app = FastAPI()
 
+@app.get("/health")
+def health():
+    return {"status": "healthy", "service": "mental-health-api"}
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
